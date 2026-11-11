@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Data Analysis System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Sales Analytics Dashboard</h1>
+        <p>Sales Data Analysis System</p>
+    </header>
+
+    <main>
+
+        <section class="upload-section">
+            <h2>Upload Sales Data</h2>
+
+            <p>Select your CSV file to analyze sales records.</p>
+
+            <input type="file" id="csvFile" accept=".csv">
+
+            <button onclick="loadCSV()">Upload & Analyze</button>
+
+            <button class="secondary" onclick="loadSample()">
+                Load Sample Data
+            </button>
+
+            <p id="status">No data loaded.</p>
+        </section>
+
+
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Total Revenue</h3>
+                <h2 id="revenue">₹0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Quantity Sold</h3>
+                <h2 id="quantity">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Total Records</h3>
+                <h2 id="records">0</h2>
+            </div>
+
+            <div class="card">
+                <h3>Top Product</h3>
+                <h2 id="topProduct">-</h2>
+            </div>
+
+        </section>
+
+
+        <section class="charts">
+
+            <div class="chart-box">
+                <h2>Monthly Revenue</h2>
+                <canvas id="monthlyChart"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h2>Product Performance</h2>
+                <canvas id="productChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <section class="table-section">
+
+            <h2>Sales Records</h2>
+
+            <div class="table-wrapper">
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Date</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Revenue</th>
+                            <th>Region</th>
+                        </tr>
+                    </thead>s
+
+                    <tbody id="salesTable">
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+
+        <section class="report-section">
+
+            <h2>CSV Validation Report</h2>
+
+            <p id="report">No report available.</p>
+
+            <ul id="errorList"></ul>
+            <button onclick="downloadErrorReport()">
+    Download Error Report
+</button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Sales Data Analysis System | 2026</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
